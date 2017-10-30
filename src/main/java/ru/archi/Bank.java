@@ -1,7 +1,5 @@
 package main.java.ru.archi;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * Created by Черный on 11.10.2017.
  */
