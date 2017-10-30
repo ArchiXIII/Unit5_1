@@ -6,18 +6,17 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by Черный on 11.10.2017.
  */
 public class Bank {
-    private AtomicInteger moneyAmount = new AtomicInteger();
+    private int moneyAmount;
 
     public Bank(int moneyAmount){
-        this.moneyAmount.set(moneyAmount);
+        this.moneyAmount = moneyAmount;
     }
 
     public synchronized void withdrawMoney(int amount) {
-        int a = moneyAmount.get();
-        moneyAmount.set(a - amount);
+        moneyAmount -= amount;
     }
 
     public synchronized boolean hasMoney(int amount){
-        return moneyAmount.get() > amount;
+        return moneyAmount > amount;
     }
 }
