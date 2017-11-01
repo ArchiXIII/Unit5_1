@@ -11,8 +11,10 @@ public class BankUser {
     }
 
     public void withdrawMoney(){
-        while (bank.hasMoney(10)) {
-            bank.withdrawMoney(10);
+        synchronized (BankUser.class) {
+            while (bank.hasMoney(10)) {
+                bank.withdrawMoney(10);
+            }
         }
     }
 }

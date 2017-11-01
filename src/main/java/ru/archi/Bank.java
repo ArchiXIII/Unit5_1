@@ -10,11 +10,11 @@ public class Bank {
         this.moneyAmount = moneyAmount;
     }
 
-    public synchronized void withdrawMoney(int amount) {
+    public void withdrawMoney(int amount) {
         moneyAmount -= amount;
     }
 
-    public synchronized boolean hasMoney(int amount){
+    public boolean hasMoney(int amount){
         return moneyAmount > amount;
     }
 }
